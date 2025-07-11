@@ -12,7 +12,7 @@ form.addEventListener('submit', async (event) => {
   console.log('➡️ Fazendo login para:', email);
 
   try {
-    const resposta = await fetch("https://register-api-270a.onrender.com/register", {
+    const resposta = await fetch("https://register-api-270a.onrender.com/login", {
       method: "POST",
       body: JSON.stringify(corpo),
       headers: {
