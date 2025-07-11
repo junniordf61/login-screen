@@ -1,23 +1,24 @@
-const form = document.querySelector('form');
-
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
   const email = document.querySelector('#email').value;
   const senha = document.querySelector('#password').value;
 
+  const corpo = {
+    email: email,
+    senha: senha
+  };
 
   console.log('➡️ Fazendo login para:', email);
 
   try {
-    const resposta = await fetch("https://register-api-27oa.onrender.com/register", {
-  method: "POST",
-  body: JSON.stringify(dados),
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
-
+    const resposta = await fetch("https://register-api-270a.onrender.com/register", {
+      method: "POST",
+      body: JSON.stringify(corpo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const dados = await resposta.json();
 
