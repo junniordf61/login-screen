@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      text-align: center;
+      padding-top: 50px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: crimson;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bem-vindo, <span id="nome-usuario"></span>!</h1>
+  <button onclick="logout()">Sair</button>
+
+  <script>
+    const usuario = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+    if (!usuario) {
+      window.location.href = 'index.html';
+    } else {
+      document.getElementById('nome-usuario').textContent = usuario.nome;
+    }
+
+    function logout() {
+      localStorage.removeItem('usuarioLogado');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>

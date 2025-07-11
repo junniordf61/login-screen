@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Signup</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <form id="form-cadastro">
+    <div id="container">
+      <div class="card-right">
+        <header>
+          <h1>Create your account</h1>
+        </header>
+
+        <div class="inputs">
+          <div class="first-last">
+            <input type="text" id="first-name" name="first-name" placeholder="First name" />
+            <input type="text" id="last-name" name="last-name" placeholder="Last name" />
+          </div>
+
+
+
+          <div class="input-icon">
+            <input type="email" name="email-register" id="input-email" placeholder="Email" />
+            <i class="fas fa-envelope"></i>
+          </div>
+
+          <div class="input-icon">
+            <input type="password" name="password-register" id="input-password" placeholder="Password"
+              autocomplete="new-password" />
+            <i class="fas fa-lock"></i>
+          </div>
+
+          <label class="checkbox">
+            <input type="checkbox" required />
+            <span>I accept the terms and conditions</span>
+          </label>
+
+          <button type="submit" id="button-create">Create account</button>
+        </div>
+        <p id="mensagem-erro"></p>
+        <p id="mensagem-sucesso"></p>
+
+        <p id="mensagem-erro" style="color: red; text-align: center;"></p>
+        <p id="mensagem-sucesso" style="color: green; text-align: center;"></p>
+
+        <p class="rodape2">
+          Already have an account?
+          <a href="index.html">Login</a>
+        </p>
+      </div>
+    </div>
+  </form>
+
+  <script src="signup.js"></script>
+
+</body>
+
+</html>

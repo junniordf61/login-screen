@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+    <form action="#">
+        <div id="container">
+            <div class="card-left">
+                <header>
+                    <h1>Welcome Back</h1>
+                </header>
+
+                <div class="inputs">
+                    <div class="input-icon">
+                        <input type="email" id="email" name="input-email" placeholder="Email" />
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="input-icon">
+                        <input type="password" id="password" name="input-password" placeholder="Password"
+                            autocomplete="new-password" />
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button class="btn-social google">
+                            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+                                alt="Google logo" />
+                            Google
+                        </button>
+
+                        <button class="btn-social apple">
+                            <img src="/FRONTEND/images/icons/747.png" alt="Apple logo" />
+                            Apple
+                        </button>
+
+                        <button class="btn-social facebook">
+                            <img src="/FRONTEND/images/icons/facebook.png" alt="Facebook logo" />
+                            Facebook
+                        </button>
+                    </div>
+
+
+                    <button type="submit" id="button-login">Login</button>
+                </div>
+
+                <p class="rodape2">
+                    Don’t have an account?
+                    <a href="signup.html">Create one</a>
+                </p>
+            </div>
+        </div>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

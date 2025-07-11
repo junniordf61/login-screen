@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(/FRONTEND/images/3407044.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.card-left,
+.card-right {
+    width: 350px;
+    max-width: 100%;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #1f1f1f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+}
+
+h1 {
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 15px;
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.input-icon input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+.first-last {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.first-last input {
+    flex: 1 1 0;
+    min-width: 0;
+    /* Impede que ultrapasse o container */
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 1rem;
+}
+
+label.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+label.checkbox input[type="checkbox"] {
+    margin: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #00bcd4;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #2499a9, #08518c);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    filter: brightness(1.1);
+}
+
+button:active {
+    transform: scale(0.96);
+    filter: opacity(0.9);
+}
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #fff;
+    color: #444;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    width: 120px;
+    height: 38px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-social img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+
+
+.rodape2 {
+    color: #aaa;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+@media (max-width: 720px) {
+    #container {
+        padding: 20px;
+    }
+
+    .card-left,
+    .card-right {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .first-last {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-social {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    input,
+    .input-icon input {
+        font-size: 1rem;
+        padding: 14px 14px 14px 40px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 14px;
+    }
+
+    .rodape2 {
+        font-size: 0.85rem;
+    }
+}
