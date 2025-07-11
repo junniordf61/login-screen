@@ -7,9 +7,10 @@ const db = new Pool({
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
-  ssl: true
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
-
 
 // ✅ Testando a conexão com o banco
 db.connect()
@@ -17,4 +18,3 @@ db.connect()
   .catch((err) => console.error('🔴 Erro ao conectar com o banco:', err.stack));
 
 module.exports = db;
-
