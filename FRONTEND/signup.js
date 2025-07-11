@@ -30,7 +30,7 @@ form.addEventListener('submit', async (e) => {
   msgSucesso.textContent = '⏳ Enviando...';
 
   try {
-    const resposta = await fetch('http://localhost:3000/usuarios', {
+    const resposta = await fetch('https://register-api-270a.onrender.com/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, senha })
