@@ -10,11 +10,14 @@ form.addEventListener('submit', async (event) => {
   console.log('➡️ Fazendo login para:', email);
 
   try {
-    const resposta = await fetch('https://register-api.onrender.com/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, senha })
-    });
+    const resposta = await fetch("https://register-api-27oa.onrender.com/register", {
+  method: "POST",
+  body: JSON.stringify(dados),
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
 
     const dados = await resposta.json();
 
