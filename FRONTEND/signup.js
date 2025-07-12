@@ -14,13 +14,11 @@ form.addEventListener('submit', async (e) => {
   const email = document.getElementById('input-email').value.trim();
   const senha = document.getElementById('input-password').value.trim();
 
-  //  VALIDAÇÃO SIMPLES
   if (!firstName || !lastName || !email || !senha) {
     msgErro.textContent = 'Preencha todos os campos.';
     return;
   }
 
-  //  VERIFICA SE EMAIL É VÁLIDO
   const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if (!emailValido) {
     msgErro.textContent = 'Informe um email válido.';
@@ -30,7 +28,7 @@ form.addEventListener('submit', async (e) => {
   msgSucesso.textContent = '⏳ Enviando...';
 
   try {
-    const resposta = await fetch('https://register-api-270a.onrender.com/login', {
+    const resposta = await fetch('https://register-api-270a.onrender.com/usuarios', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, senha })
