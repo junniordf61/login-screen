@@ -1,29 +1,31 @@
-app.post('/usuarios', async (req, res) => {
-  const { name, email, senha } = req.body;
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('#login-form');
 
-  try {
-    // Verifica se já existe um email igual
-    const existente = await db.query('SELECT * FROM users WHERE email = $1', [email]);
-    if (existente.rows.length > 0) {
-      return res.status(400).json({ erro: 'Email já cadastrado.' });
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const email = document.querySelector('#email').value;
+    const senha = document.querySelector('#password').value;
+
+    const corpo = { email, senha };
+
+    try {
+      const resposta = await fetch("https://register-api-270a.onrender.com/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(corpo),
+      });
+
+      const dados = await resposta.json();
+
+      if (resposta.ok) {
+        localStorage.setItem('usuarioLogado', JSON.stringify(dados.usuario));
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('❌ Erro: ' + dados.erro);
+      }
+    } catch (erro) {
+      alert('🚨 Erro de conexão com o servidor!');
     }
-
-    // Criptografa a senha
-    const passwordHashed = await bcrypt.hash(senha, 10);
-
-    const result = await db.query(
-      'INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING id, name, email, created_at',
-      [name, email, passwordHashed]
-    );
-
-    return res.status(201).json({
-      mensagem: 'User successfully registered',
-      usuario: result.rows[0]
-    });
-  } catch (error) {
-    return res.status(500).json({
-      erro: 'Erro ao cadastrar usuário',
-      detalhe: error.message
-    });
-  }
+  });
 });
