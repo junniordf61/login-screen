@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const corpo = { email, senha };
 
     try {
-      const resposta = await fetch("https://register-api-270a.onrender.com/login", {
+      const resposta = await fetch("https://register-api-270a.onrender.com/usuarios", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(corpo),
